@@ -5,8 +5,16 @@ void main() =>
     home: NinjaCard(),
   ));
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int flutterLevel = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +26,11 @@ class NinjaCard extends StatelessWidget {
           backgroundColor: Colors.grey,
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.lightGreen,
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
@@ -26,9 +39,13 @@ class NinjaCard extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage('assets/pic1.jpeg'),
-                radius: 40.0,
+                backgroundImage: AssetImage('assets/pic5.jpg'),
+                radius: 80.0,
               ),
+            ),
+            Divider(
+              height: 90,
+              color: Colors.blueGrey[800],
             ),
             Text(
               'NAME:',
@@ -57,7 +74,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),
             Text(
-              '4',
+              '$flutterLevel',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -90,3 +107,4 @@ class NinjaCard extends StatelessWidget {
     );
   }
 }
+
