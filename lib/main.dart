@@ -15,23 +15,27 @@ class NinjaCard extends StatefulWidget {
 class _NinjaCardState extends State<NinjaCard> {
   int flutterLevel = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey[600],
       appBar: AppBar(
-        title: Text('Ify ID Card'),
+        title: Text('Ify ID '),
         centerTitle: true,
           backgroundColor: Colors.grey,
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            flutterLevel += 1 ;
+          });
+        },
         child: Icon(Icons.add),
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Colors.green[800],
       ),
-      body: Padding(
+      body:
+      Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,8 +54,9 @@ class _NinjaCardState extends State<NinjaCard> {
             Text(
               'NAME:',
               style: TextStyle(
-                color: Colors.cyanAccent,
+                color: Colors.cyanAccent[500],
                 letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 10.0,),
@@ -64,12 +69,13 @@ class _NinjaCardState extends State<NinjaCard> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 30.0,),
+            SizedBox(height: 40.0,),
             Text(
               'CURRENT FLUTTER LEVEL',
               style: TextStyle(
-                color: Colors.cyanAccent,
+                color: Colors.cyanAccent[600],
                 letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 10.0,),
@@ -104,6 +110,7 @@ class _NinjaCardState extends State<NinjaCard> {
           ],
         ),
       ),
+
     );
   }
 }
