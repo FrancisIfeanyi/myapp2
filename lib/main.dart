@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 void main() =>
   runApp( MaterialApp(
@@ -18,11 +19,28 @@ class _NinjaCardState extends State<NinjaCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[600],
+      bottomNavigationBar:  GNav(
+        backgroundColor: Colors.cyan,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(icon: Icons.facebook,
+            text: 'Facebook',
+          ),
+          GButton(icon: Icons.favorite_border,
+              text: 'Twitter'),
+          GButton(icon: Icons.search,
+              text: 'Bing'),
+        ],
+      ),
+
+      backgroundColor: Colors.lightBlue[50],
       appBar: AppBar(
         title: Text('Ify ID '),
         centerTitle: true,
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.grey[900],
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
@@ -49,12 +67,12 @@ class _NinjaCardState extends State<NinjaCard> {
             ),
             Divider(
               height: 90,
-              color: Colors.blueGrey[800],
+              color: Colors.blueGrey[100],
             ),
             Text(
               'NAME:',
               style: TextStyle(
-                color: Colors.cyanAccent[500],
+                color: Colors.cyanAccent[900],
                 letterSpacing: 2.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -63,7 +81,7 @@ class _NinjaCardState extends State<NinjaCard> {
             Text(
               'SUCCESS IFEANYI',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.indigoAccent[200],
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -82,31 +100,51 @@ class _NinjaCardState extends State<NinjaCard> {
             Text(
               '$flutterLevel',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.indigoAccent[200],
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 30.0),
+            Text(
+              'PHONE:',
+              style: TextStyle(
+                color: Colors.cyanAccent[900],
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10.0,),
+            Text(
+              '+2348063989006',
+              style: TextStyle(
+                color: Colors.purpleAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20.0,),
             Row(
               children: [
                 Icon(
                   Icons.email,
                   color: Colors.grey[400],
                 ),
-                SizedBox(width: 5.0,
+                SizedBox(width: 6.0,
                 ),
                 Text(
                     'azuatalam2016@gmail.com',
                 style: TextStyle(
-                  color: Colors.amber,
+                  color: Colors.redAccent[200],
                   fontSize: 18.0,
                   letterSpacing: 1.0,
                 ),
                 ),
               ],
             ),
+
           ],
         ),
       ),
@@ -114,4 +152,6 @@ class _NinjaCardState extends State<NinjaCard> {
     );
   }
 }
+
+
 
